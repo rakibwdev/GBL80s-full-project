@@ -1,0 +1,9 @@
+services:
+  gbl80s:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    ports: ["3000:3000"]
+    volumes: ["gbl80s-data:/data"]   # database, uploaded originals and backups live here
+volumes:
+  gbl80s-data:
